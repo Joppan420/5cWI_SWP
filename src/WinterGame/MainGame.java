@@ -12,6 +12,7 @@ public class MainGame extends BasicGame {
 
 
     private List<Actor> actors = new ArrayList<>();
+    private List<MoveStrategy> moveStrategy = new ArrayList<>();
 
     public MainGame(String title) {
         super(title);
@@ -20,9 +21,13 @@ public class MainGame extends BasicGame {
     @Override
     public void init(GameContainer gc) throws SlickException {
         // 1 mal aufgerufen
-        this.ca1 = new CircleActor(100, 100);
-        this.ca2 = new CircleActor(100,200);
-        this.ra1 = new RectActor(60,500);
+        MoveStrategy mr1 = new MoveRight(0, 0, 0.3f);
+        MoveStrategy mr2 = new MoveLeft(500, 100, 0.1f);
+        MoveStrategy mr3 = new MoveLeft(540, 200, 0.2f);
+
+        this.ca1 = new CircleActor(mr1);
+        this.ca2 = new CircleActor(mr2);
+        this.ra1 = new RectActor(mr3);
 
 
         this.actors.add(ca1);
