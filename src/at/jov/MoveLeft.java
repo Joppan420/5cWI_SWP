@@ -1,4 +1,6 @@
-package WinterGame;
+package at.jov;
+
+import org.newdawn.slick.GameContainer;
 
 public class MoveLeft implements MoveStrategy {
     private float x, y, speed;
@@ -9,7 +11,8 @@ public class MoveLeft implements MoveStrategy {
         this.speed = speed;
     }
 
-    public void update(int delta) {
+    @Override
+    public void update(GameContainer gc, int delta) {
         this.x -= delta * speed;
     }
 

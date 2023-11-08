@@ -1,4 +1,4 @@
-package WinterGame;
+package at.jov;
 
 import org.newdawn.slick.GameContainer;
 
@@ -13,6 +13,6 @@ public abstract class AbstractActor implements Actor {
 
     @Override
     public void update(GameContainer gc, int delta) {
-        moveStrategy.update(delta);
+        moveStrategy.update(gc, delta);
     }
 }

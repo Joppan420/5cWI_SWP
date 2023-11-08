@@ -1,20 +1,16 @@
-package WinterGame;
+package at.jov;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 public class RectActor extends AbstractActor {
-    private MoveStrategy moveStrategy;
-
-
     public RectActor(MoveStrategy mr) {
         super(mr);
-
     }
 
     @Override
     public void update(GameContainer gc, int delta) {
-        moveStrategy.update(delta);
+        moveStrategy.update(gc, delta);
     }
 
     @Override

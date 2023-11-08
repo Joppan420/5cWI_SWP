@@ -1,4 +1,4 @@
-package WinterGame;
+package at.jov;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -11,7 +11,7 @@ public class CircleActor implements Actor{
     }
 
     public void update(GameContainer gc, int delta) {
-        moveStrategy.update(delta);
+        moveStrategy.update(gc,delta);
     }
 
     public void render(Graphics graphics) {
