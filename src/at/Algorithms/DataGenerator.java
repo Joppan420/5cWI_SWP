@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class DataGenerator {
     
-   public static void generateDataArray(int[] arr){
+   public static void generateData(int[] arr){
        Random r = new Random();
        for (int i = 0; i < arr.length; i++) {
            arr[i] = r.nextInt(100);
@@ -38,8 +38,8 @@ public class DataGenerator {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[5];
-        generateDataArray(arr);
+        int[] arr = new int[4];
+        generateData(arr);
         printArray(arr);
         insertionSort(arr);
         printArray(arr);
