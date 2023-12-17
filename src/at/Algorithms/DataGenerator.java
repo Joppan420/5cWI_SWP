@@ -4,44 +4,30 @@ import java.util.Random;
 
 public class DataGenerator {
     
-   public static void generateData(int[] arr){
+   public int[] generateData(int size){
+       int[] data = new int[size];
        Random r = new Random();
-       for (int i = 0; i < arr.length; i++) {
-           arr[i] = r.nextInt(100);
+       for (int i = 0; i < size; i++) {
+           data[i] = r.nextInt();
        }
+       return data;
    }
 
+    public int[] generateData(int size, int min, int max) {
+        int[] data = new int[size];
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            data[i] = random.nextInt(max - min) + min;
+        }
+        return data;
+    }
 
     public static void printArray(int[] data){
-        if (data.length == 0) {
-            System.out.println("[ ]");
-            return;
+        for (int number : data) {
+            System.out.println(number + "  ");
         }
-
-        System.out.println("[");
-        for (int i = 0; i < data.length; i++) {
-            System.out.println(data[i] + ", ");
-        }
-        System.out.println(data[data.length -1] + "]");
+        System.out.println();
     }
 
-    public static void insertionSort(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
-            int valueToSort = arr[i];
-            int k = i;
-            while(k > 0 && arr[k-1] > valueToSort){
-                arr[k] = arr[k-1];
-                k--;
-            }
-            arr[k]  = valueToSort;
-        }
-    }
 
-    public static void main(String[] args) {
-        int[] arr = new int[4];
-        generateData(arr);
-        printArray(arr);
-        insertionSort(arr);
-        printArray(arr);
-    }
 }
