@@ -13,14 +13,6 @@ public class DataGenerator {
        return data;
    }
 
-    public int[] generateData(int size, int min, int max) {
-        int[] data = new int[size];
-        Random random = new Random();
-        for (int i = 0; i < size; i++) {
-            data[i] = random.nextInt(max - min) + min;
-        }
-        return data;
-    }
 
     public static void printArray(int[] data){
         for (int number : data) {
@@ -28,6 +20,4 @@ public class DataGenerator {
         }
         System.out.println();
     }
-
-
 }
