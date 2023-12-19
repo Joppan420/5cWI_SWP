@@ -4,16 +4,22 @@ import java.util.Random;
 
 public class Test {
     public static void main(String[] args) {
-        Animal dog = new Dog("Julian");
-        dog.run();
+        Person person = new Person("Hans", "Mayer");
 
-        Animal cat = new Cat("Michi");
-        cat.run();
 
-        PetStore petStore = new PetStore();
-        petStore.printNameOfAnimal(dog.getName() + " and  "  + cat.getName());
+        PetStore petStore = new PetStore(person);
 
-        Person person = new Person();
-        person.();
+        Cat cat =  new Cat("hansi");
+        System.out.println(cat.getName());
+        petStore.addAnimals(cat);
+
+
+        Dog dog =  new Dog("Max");
+        System.out.println(dog.getName());
+        petStore.addAnimals(dog);
+
+        petStore.printNameOfAnimal();
+        petStore.getOwner();
+
     }
 }
